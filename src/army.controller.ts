@@ -1,10 +1,10 @@
 import { Controller, Get, HttpException, Query } from '@nestjs/common';
-import { AppService } from './app.service';
+import { ArmyService } from './army.service';
 import { ArmiesDto } from './dtos/armiesDto';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+export class ArmyController {
+  constructor(private readonly armyService: ArmyService) {}
 
 
   // validation of query parameters should be done using a lib like joi, or with additional edge case coverage ( following example won't, but should fail: '?army1=50&army2')
@@ -15,6 +15,6 @@ export class AppController {
       const ERR_STATUS_CODE = 400;
       throw new HttpException(ERR_MESSAGE, ERR_STATUS_CODE)
     }
-    return this.appService.battleBetweenArmiesService(armies.army1, armies.army2);
+    return this.armyService.battleBetweenArmiesService(armies.army1, armies.army2);
   }
 }

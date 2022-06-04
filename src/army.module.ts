@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import {  ArmyController } from './army.controller';
+import {  ArmyService } from './army.service';
 import { ElementsOfRandomnessModule } from './elements-of-randomness/elements-of-randomness.module';
 import { ElementsOfRandomnessService } from './elements-of-randomness/elements-of-randomness.service';
 import { UtilsModule } from './utils/utils.module';
@@ -8,7 +8,7 @@ import { UtilsService } from './utils/utils.service';
 
 @Module({
   imports: [ElementsOfRandomnessModule, UtilsModule],
-  controllers: [AppController],
-  providers: [AppService, ElementsOfRandomnessService, UtilsService],
+  controllers: [ArmyController],
+  providers: [ArmyService, ElementsOfRandomnessService, UtilsService],
 })
-export class AppModule {}
+export class ArmyModule {}

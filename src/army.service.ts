@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ElementsOfRandomnessService } from './elements-of-randomness/elements-of-randomness.service';
 
 @Injectable()
-export class AppService {
+export class ArmyService {
   constructor(
     private elementsOfRandomness: ElementsOfRandomnessService
   ) {}
